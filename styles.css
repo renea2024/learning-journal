@@ -1,0 +1,245 @@
+/* ===== Global Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: #e0f2fe; /* light sky blue */
+  color: #0f172a; /* very dark blue-gray text */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== Buttons ===== */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1e40af; /* deep blue */
+}
+
+header button {
+  background-color: #2563eb; /* medium blue */
+  color: white;
+}
+
+header button:hover {
+  background-color: #1d4ed8; /* darker blue */
+}
+
+/* ===== Search Bar ===== */
+#search {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #93c5fd; /* light blue */
+  margin-bottom: 20px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* ===== Sections ===== */
+section {
+  margin-bottom: 30px;
+}
+
+section h2 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e3a8a; /* dark blue heading */
+}
+
+/* ===== Entries Container ===== */
+.entries-container {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ===== Entry Card ===== */
+.entry-card {
+  background-color: #dbeafe; /* soft light blue */
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.entry-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.2);
+}
+
+/* ===== Entry Header ===== */
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.entry-title {
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: #1e3a8a; /* dark blue */
+}
+
+.entry-date {
+  font-size: 0.85rem;
+  color: #3b82f6; /* medium blue for date */
+  font-style: italic;
+}
+
+.favorite {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #60a5fa; /* bright blue star */
+}
+
+/* ===== Entry Content ===== */
+.entry-content {
+  font-size: 0.95rem;
+  color: #1e40af;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* ===== Action Buttons ===== */
+.entry-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.entry-actions button.delete-btn {
+  background-color: #1e3a8a; /* dark blue delete */
+  color: white;
+}
+
+.entry-actions button.delete-btn:hover {
+  background-color: #1e40af;
+}
+
+/* ===== Modal ===== */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 58, 138, 0.35); /* semi-transparent blue overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+#modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #dbeafe; /* light blue modal */
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-content h2 {
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #93c5fd;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-buttons .save-btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.modal-buttons .save-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.modal-buttons .cancel-btn {
+  background-color: #93c5fd;
+  color: #1e3a8a;
+}
+
+.modal-buttons .cancel-btn:hover {
+  background-color: #60a5fa;
+}
+
+/* ===== Empty State ===== */
+.empty {
+  font-style: italic;
+  color: #3b82f6;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media(max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content {
+    padding: 16px;
+  }
+
+  .entry-content {
+    font-size: 0.9rem;
+  }
+}
