@@ -4,30 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learning Journal</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- =======================
+       Header
+  ======================== -->
   <header>
-    <h1>Learning Journal</h1>
-    <button id="addEntryBtn">+ Add Entry</button>
+    <h1>📓 Learning Journal</h1>
+    <button id="addEntryBtn">+ New Entry</button>
   </header>
 
-  <input type="text" id="search" placeholder="Search entries...">
+  <!-- =======================
+       Search
+  ======================== -->
+  <input 
+    type="text" 
+    id="search" 
+    placeholder="Search entries..."
+    aria-label="Search entries"
+  >
 
-  <section id="entries-section">
-    <h2>All Entries</h2>
+  <!-- =======================
+       Entries Section
+  ======================== -->
+  <section>
+    <h2>Entries</h2>
     <div id="entries" class="entries-container">
       <div class="empty">No entries yet.</div>
     </div>
   </section>
 
-  <!-- Add Entry Modal -->
+  <!-- =======================
+       Modal (Add Entry)
+  ======================== -->
   <div id="modal">
     <div class="modal-content">
       <h2>Add Entry</h2>
-      <input type="text" id="title" placeholder="Title">
-      <input type="date" id="date" placeholder="Date">
-      <textarea id="content" rows="5" placeholder="Write your entry here..."></textarea>
+
+      <input 
+        type="text" 
+        id="title" 
+        placeholder="Title"
+      >
+
+      <input 
+        type="date" 
+        id="date"
+      >
+      <selct id="topic">
+        <option value="">Select Topic (Optional)</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="React">React</option>
+        <option value="Debugging">Debugging</option>
+        <option value="Github">Github</option>
+      </selct>
+
+      <textarea 
+        id="content" 
+        rows="5" 
+        placeholder="Write your entry here..."
+      ></textarea>
+
       <div class="modal-buttons">
         <button class="cancel-btn" id="cancelBtn">Cancel</button>
         <button class="save-btn" id="saveBtn">Save</button>
@@ -35,6 +78,10 @@
     </div>
   </div>
 
+  <!-- =======================
+       JavaScript
+  ======================== -->
   <script src="app.js"></script>
+
 </body>
 </html>

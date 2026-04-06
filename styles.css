@@ -1,34 +1,23 @@
-/* ===== Global Styles ===== */
+/* =======================
+   Root / Base
+======================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
-  background-color: #e0f2fe; /* light sky blue */
-  color: #0f172a; /* very dark blue-gray text */
+  background-color: #f8fafc;
+  color: #1e293b;
   min-height: 100vh;
   padding: 20px;
 }
 
-/* ===== Buttons ===== */
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-weight: 500;
-  transition: background 0.2s, transform 0.1s;
-}
-
-button:hover {
-  transform: scale(1.03);
-}
-
-/* ===== Header ===== */
+/* =======================
+   Header
+======================= */
 header {
   display: flex;
   justify-content: space-between;
@@ -38,131 +27,126 @@ header {
 
 header h1 {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #1e40af; /* deep blue */
+  color: #4338ca;
 }
 
 header button {
-  background-color: #2563eb; /* medium blue */
+  background-color: #6366f1;
   color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 header button:hover {
-  background-color: #1d4ed8; /* darker blue */
+  background-color: #4f46e5;
+  transform: scale(1.05);
 }
 
-/* ===== Search Bar ===== */
+/* =======================
+   Search
+======================= */
 #search {
   width: 100%;
   padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid #93c5fd; /* light blue */
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
   margin-bottom: 20px;
   font-size: 1rem;
-  background-color: #ffffff;
-  color: #0f172a;
 }
 
-/* ===== Sections ===== */
-section {
-  margin-bottom: 30px;
-}
-
-section h2 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #1e3a8a; /* dark blue heading */
-}
-
-/* ===== Entries Container ===== */
+/* =======================
+   Entries Layout
+======================= */
 .entries-container {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* ===== Entry Card ===== */
+/* =======================
+   Entry Card (Journal Style)
+======================= */
 .entry-card {
-  background-color: #dbeafe; /* soft light blue */
-  border-radius: 16px;
+  background: #ffffff;
+  border-left: 5px solid #6366f1;
+  border-radius: 10px;
   padding: 18px;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease;
 }
 
 .entry-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.2);
 }
 
-/* ===== Entry Header ===== */
+/* Header inside card */
 .entry-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 10px;
 }
 
 .entry-title {
-  font-weight: bold;
-  font-size: 1.15rem;
-  color: #1e3a8a; /* dark blue */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #312e81;
 }
 
 .entry-date {
-  font-size: 0.85rem;
-  color: #3b82f6; /* medium blue for date */
-  font-style: italic;
+  font-size: 0.8rem;
+  color: #64748b;
 }
 
-.favorite {
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #60a5fa; /* bright blue star */
-}
-
-/* ===== Entry Content ===== */
+/* Content */
 .entry-content {
   font-size: 0.95rem;
-  color: #1e40af;
+  line-height: 1.6;
+  color: #334155;
   margin-bottom: 12px;
-  line-height: 1.5;
 }
 
-/* ===== Action Buttons ===== */
+/* Buttons */
 .entry-actions {
   display: flex;
   gap: 10px;
 }
 
-.entry-actions button.delete-btn {
-  background-color: #1e3a8a; /* dark blue delete */
+.entry-actions button {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.delete-btn {
+  background-color: #4338ca;
   color: white;
 }
 
-.entry-actions button.delete-btn:hover {
-  background-color: #1e40af;
+.delete-btn:hover {
+  background-color: #3730a3;
 }
 
-/* ===== Modal ===== */
+/* =======================
+   Modal
+======================= */
 #modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(30, 58, 138, 0.35); /* semi-transparent blue overlay */
+  background-color: rgba(15, 23, 42, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition: 0.2s;
 }
 
 #modal.active {
@@ -171,75 +155,110 @@ section h2 {
 }
 
 .modal-content {
-  background-color: #dbeafe; /* light blue modal */
-  border-radius: 16px;
-  padding: 24px;
-  max-width: 400px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
   width: 100%;
+  max-width: 400px;
 }
 
 .modal-content h2 {
-  margin-bottom: 16px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1e3a8a;
+  margin-bottom: 10px;
+  color: #4338ca;
 }
 
 .modal-content input,
 .modal-content textarea {
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #93c5fd;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  background-color: #ffffff;
-  color: #0f172a;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
 }
 
 .modal-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  padding:8px;
+  margin: 2px;
 }
 
-.modal-buttons .save-btn {
-  background-color: #2563eb;
+.save-btn {
+  background-color: #6366f1;
   color: white;
+  padding: 4px;
 }
 
-.modal-buttons .save-btn:hover {
-  background-color: #1d4ed8;
+.save-btn:hover {
+  background-color: #4f46e5;
 }
 
-.modal-buttons .cancel-btn {
-  background-color: #93c5fd;
-  color: #1e3a8a;
+.cancel-btn {
+  background-color: #e2e8f0;
 }
 
-.modal-buttons .cancel-btn:hover {
-  background-color: #60a5fa;
+.cancel-btn:hover {
+  background-color: #cbd5f5;
+}
+/* Fix dropdown appearance */
+.modal-content select {
+  appearance: none;              /* removes default browser styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+  font-size: 1rem;
+
+  background-color: #ffffff;
+  color: #1e293b;
+  cursor: pointer;
+
+  /* custom dropdown arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%236366f1' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5H5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+
+  padding-right: 35px; /* space for arrow */
 }
 
-/* ===== Empty State ===== */
+/* Focus state */
+.modal-content select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+/* Dropdown 
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  color: #1e293b;*/
+}
+
+/* Topic tag */
+.entry-topic {
+  display: inline-block;
+  font-size: 0.75rem;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-top: 4px;
+}
+
+/* =======================
+   Empty State
+======================= */
 .empty {
-  font-style: italic;
-  color: #3b82f6;
   text-align: center;
-  padding: 16px 0;
-}
-
-/* ===== Mobile Responsiveness ===== */
-@media(max-width: 480px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  .modal-content {
-    padding: 16px;
-  }
-
-  .entry-content {
-    font-size: 0.9rem;
-  }
+  font-style: italic;
+  color: #64748b;
 }
